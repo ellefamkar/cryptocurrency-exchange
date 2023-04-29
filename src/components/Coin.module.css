@@ -22,17 +22,19 @@
     margin-left: 15px;
     text-align: left;
     font-weight: bold;
-    color: #333333;
+    color: #cdcbcb;
   }
   
   .symbol {
     text-align: left;
     width: 100px;
+    color: #cdcbcb;
   }
   
   .currentPrice {
     text-align: left;
     width: 100px;
+    color: #cdcbcb;
   }
   
   .greenPriceChange,

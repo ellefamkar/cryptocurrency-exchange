@@ -34,7 +34,7 @@ const Landing = () => {
     return(
         <>
             <div>
-                 <input type="text" placeholder="Search your coin ...." value={search} onChange={handleSearch} className={styles.input} />
+                 <input type="text" placeholder="Search your coin here" value={search} onChange={handleSearch} className={styles.input} />
             </div>
             {
                 coins.length 
