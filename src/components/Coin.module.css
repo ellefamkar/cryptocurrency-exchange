@@ -5,7 +5,8 @@
     padding: 15px 40px;
     font-size: 12px;
     color: #212529;
-    border-bottom: 1px solid silver;
+    /* border-bottom: 1px solid silver; */
+    border-bottom: 1px solid #565656;
   }
   
   .container:last-child {
@@ -52,3 +53,19 @@
     color: rgb(0, 204, 0);
   }
   
+
+    
+@media screen and (max-width:767.98px) {
+  .container {
+    padding: 6px;
+  }
+
+  .image {
+    width: 20px;
+  }
+
+  .name,
+  .symbol {
+    font-size: 11px;
+  }
+}

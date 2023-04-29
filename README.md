@@ -1,70 +1,132 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Welcome to my React Digital Cryptocurrency online Application 👋
 
 ## Available Scripts
 
 In the project directory, you can run:
-
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Table of contents
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-### `npm test`
+## Overview
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Thanks for checking out my Digital Cryptocurrency online app.
+Remember that "Every day is a learning day" and try to learn from everyone! 
 
-### `npm run build`
+ ### Screenshot 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![](./src/images/Screenshot.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Links
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Live Project URL: [Digital Cryptocurrency Application](https://graceful-daffodil-300119.netlify.app/)
 
-### `npm run eject`
+## My process
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Where to find resources
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The first think to do is to look for your perfect design! So let's checkout [dribble](https://dribbble.com/) our favourite design to begin!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Built with
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Reactjs
+- Axios
+- styled modules
+- Semantic HTML5 markup
+- CSS Grid
+- Mobile-first workflow
 
-## Learn More
+You can use any tools you like to help you complete the project. So if you got something you'd like to practice, feel free to give it a try. However, i wrote this design with simple html5 and css and made it responsive for all the devices, since my users should be able to: View the optimal layout
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### What I learned
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This projects helped me being more familiar with the details of react, its hooks, components, hosting and API, and  create a responsive project with small details on colors,sizes and so on.
 
-### Code Splitting
+To see parts of my codes and see how you can add code snippets, see below:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+``` JSX
 
-### Analyzing the Bundle Size
+   useEffect(()=>{
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+        const fetchAPI = async () => {
+            const data = await getCoin();
+            setCoins(data);
+            console.log(data);
+        };
+        fetchAPI();
 
-### Making a Progressive Web App
+    },[]);
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+    const handleSearch = (event)=>{
+        setSearch(event.target.value)
+    }
 
-### Advanced Configuration
+    const searchedCoins = coins.filter( coin => coin.name.toLowerCase().includes(search.toLowerCase()));
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+    const Coin = ({name,symbol,image,marketCapChange,price,marketCap}) =>{
+        return(
+            <>
+                <div className={styles.container}>
+                    <img src={image} alt={name} className={styles.image} />
+                    <span className={styles.name}>{name}</span>
+                    <span className={styles.symbol}>{symbol.toUpperCase()}</span>
+                    <span className={styles.currentPrice}>$ {price.toLocaleString()}</span>
+                    <span className={marketCapChange > 1 ? styles.greenPriceChange : styles.redPriceChange}>{marketCapChange.toFixed(2)}</span>
+                    <span className={styles.symbol}>$ {marketCap.toLocaleString()}</span>
+                </div>
+            </>
+        );
+    }
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+```
+```css
+      
+  .symbol {
+    text-align: left;
+    width: 100px;
+    color: #cdcbcb;
+  }
+  
+  .currentPrice {
+    text-align: left;
+    width: 100px;
+    color: #cdcbcb;
+  }
+  
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Useful resources
+
+In order to do this project in a correct way you need to have a good knowledge of html and css and js adn react, so let's master at them with these fruitful resources.
+
+- [w3schools](https://www.w3schools.com/) - This helps you a lot with both your css and html which is easy to read and has numerous examples.
+- [MDN](https://developer.mozilla.org/en-US/) - Remember that no matter how many tutorial videos you have watched, you always need to learn details and features from codes documentations
+- [codeacademy](https://www.codecademy.com/)
+- [udemy](https://www.udemy.com/) - Here you can find a number of tutorials in different languages
+- [coursera](https://www.coursera.org/)
+
+## Author
+
+- Website - [Elle Famkar](https://bespoke-marigold-f2f8e3.netlify.app/)
+- Twitter - [@Ellefamkar](https://www.twitter.com/ellefamkar)
+
+Feel free to ask any questions come to your mind  and send me message via my current temporary website in the link above!
+
+## Acknowledgments
+
+I am thankful to each and every person in this area who teaches me a single piece of code! I learn every single day from amazing people! so I need to thank you all ❤
+
+**Have fun using this project!** 🚀
