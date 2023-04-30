@@ -1,9 +1,9 @@
-import './App.css';
+import styles from './App.module.css';
 import Landing from './components/Landing';
 
 function App() {
   return (
-    <div className="App">
+    <div className={styles.App}>
       <Landing />
     </div>
   );
